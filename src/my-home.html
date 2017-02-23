@@ -1,0 +1,72 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/awesome-slider/awesome-slider.html">
+<link rel="import" href="../bower_components/l2t-paper-slider/l2t-paper-slider.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-home">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      l2t-paper-slider {
+        /*--paper-slide-width: 300px;*/
+        --paper-slide-height: 200px;
+        --paper-slide-dot: rgba(120,144,156 ,.8);
+        --paper-slide-dot-selected: rgba(38,50,56 ,1);
+      }
+    </style>
+
+    <div class="home horizontal layout">
+      <div class="vertical layout">
+        <div class="basket">
+        Kosár
+        </div>
+        <div class="purchase-support">
+        Vásárlási infó
+        </div>
+      </div>
+      <div class="vertical layout">
+        <awesome-slider pre-image="/images/logo.svg" autostart="false" bullets="true">
+            <item source="/images/slides/slide1.jpg"></item>
+            <item source="/images/slides/slide2.jpg"></item>
+            <item source="/images/slides/slide3.jpg"></item>
+            <item source="/images/slides/slide4.jpg"></item>
+        </awesome-slider>
+
+        <l2t-paper-slider auto-progress slide-duration="4" total-slides="3" paper-slide-height="150px">
+          <paper-slide class="horizontal center-justified layout"><img src="/images/slides/slide1.jpg"></paper-slide>
+          <paper-slide class="horizontal center-justified layout"><img src="/images/slides/slide2.jpg"></paper-slide>
+          <paper-slide class="horizontal center-justified layout"><img src="/images/slides/slide3.jpg"></paper-slide>
+        </l2t-paper-slider>
+        <div>
+          User Spec adatok, ajánlatok
+        </div>
+        <div>
+          Aktualitások
+        </div>
+        <div>
+          Új
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-home',
+    });
+  </script>
+</dom-module>
